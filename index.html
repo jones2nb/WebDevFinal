@@ -7,24 +7,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Api</title>
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Best Flights</h1>
-    <div>
-        <h3>From: (ex: 'IAD')</h3>
+    <h1 id="top">Flight and Hotel Package Api</h1>
+    <div id="info">
+        <h3>Flying From: (ex: 'IAD')</h3>
         <input type="text" id="origin">
-        <h3>To: (ex: 'MCO')</h3>
+        <h3>Flying To: (ex: 'MCO')</h3>
         <input type="text" id="destination">
         <br>
-        <input type="radio" id="best" name="flight" checked>
+        <h3>Flight Date: (Must be in YYYY-MM-DD formatt)</h3>
+        <input type="text" id="date">
+        <h3>Return Date: (Must be in YYYY-MM-DD formatt)</h3>
+        <input type="text" id="return-date">
+        <br>
+        <br>
+        <label for="adults"><h3>Adults (between 1 and 4):</h3></label>
+        <input type="number" id="adults" name="adults" min="1" max="4" value="1">
+        <br>
+        <p>(Filter):</p>
+        <input type="radio" id="best" name="flight">
         <label for="best">Best</label>
         <input type="radio" id="fast" name="flight">
         <label for="best">Fastest</label>
         <input type="radio" id="cheap" name="flight">
-        <label for="best">Cheap</label>
+        <label for="best">Cheap<br></label>  
+        <br>
+        <button id="search" type="button">Search</button>
     </div>
-    <div id="flight-results"></div>
+    <div id="results">
+        <div>
+            <h3 id="top">Flights:</h3>
+            <div id="flight-results"></div>
+        </div>
+        <div>
+            <h3 id="top">Hotels:</h3>
+            <div id="hotel-results"></div>
+        </div>
+    </div>
     <script type="text/javascript" src="apis.js"></script>
 </body>
 
