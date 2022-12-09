@@ -144,7 +144,7 @@ function getHotels(allResponse) {
     returnDate = document.getElementById("return-date");
     adults = document.getElementById("adults");
     let entity_id = allResponse[0].entity_id;
-    
+
     for (i = 0; i < allResponse.length; i++) {
         if (allResponse[i].class == "City") {
             entity_id = allResponse[i].entity_id;
@@ -162,6 +162,9 @@ function formattHotels(response) {
     console.log(response);
     hotelResults.innerText = "";
     for (i = 0; i < 5; i++) {
+        if (response.hotels.length <= i) {
+            break
+        }
         let hotel = response.hotels[i];
         hotelResults.innerText += `
             ${hotel.name}

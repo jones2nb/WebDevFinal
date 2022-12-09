@@ -4,10 +4,30 @@
     justify-content: space-evenly;
 }
 
+#flight, #hotel {
+    width: 33%;
+}
+
 #top {
     text-align: center;
 }
 
 #info {
     text-align: center;
+}
+
+#flight-results, #hotel-results {
+    width: 60%;
+    margin: 0 20% 0 20%;
+}
+
+@media screen and (max-width: 800px) {
+    #results {
+        flex-direction: column;
+        justify-content: center;
+    }
+    #flight, #hotel {
+        width: 50%;
+        margin: 0 25%;
+    }
 }
